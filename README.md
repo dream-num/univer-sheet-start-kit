@@ -1,4 +1,4 @@
-# univer-sheets-template
+# univer-sheet-start-kit
 
 This template can help you get started with using the Univer API, and you can use the code inside to create useful applications.
 
@@ -9,3 +9,12 @@ This template can help you get started with using the Univer API, and you can us
 - [x] get workbook data
 - [x] get worksheet data
 - [x] create worksheet
+- [x] set cell background color
+- [x] scroll to cell B100
+- [x] scroll to top
+- [x] scroll to bottom
+- [x] listen commands
+- [x] disable / enable edit
+- [x] undo / redo
+- [x] select A1
+- [x] clear A1 styles
