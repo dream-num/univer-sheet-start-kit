@@ -7,7 +7,7 @@ body {
 }
 
 :root {
-  --toolbar-height: 64px;
+  --toolbar-height: 100px;
 }
 
 #app {
@@ -19,7 +19,9 @@ body {
 #toolbar {
   height: var(--toolbar-height);
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem 1rem;
+  flex-wrap: wrap;
+  overflow: auto;
 }
 #toolbar a {
   height: 28px;
