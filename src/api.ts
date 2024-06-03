@@ -1,5 +1,6 @@
 // eslint
 import type { FUniver } from '@univerjs/facade'
+import { ScrollToCellCommand } from '@univerjs/sheets-ui'
 
 export function setupSetValue($toolbar: HTMLElement, univerAPI: FUniver) {
   const $button = document.createElement('a')
@@ -201,7 +202,7 @@ export function setupScrollToCell($toolbar: HTMLElement, univerAPI: FUniver) {
     if (!activeWorkbook)
       throw new Error('activeWorkbook is not defined')
 
-    univerAPI.executeCommand('sheet.command.scroll-to-cell', {
+    univerAPI.executeCommand(ScrollToCellCommand.id, {
       range: {
         startColumn: 1,
         startRow: 99,
@@ -398,9 +399,7 @@ export function setupSetSelection($toolbar: HTMLElement, univerAPI: FUniver) {
     if (!activeSheet)
       throw new Error('activeSheet is not defined')
 
-    // eslint-disable-next-line ts/ban-ts-comment
-    // @ts-expect-error
-    const subUnitId = activeSheet._worksheet.getSheetId()
+    const subUnitId = activeSheet.getSheetId()
 
     univerAPI.executeCommand('sheet.operation.set-selections', {
       selections: [{
@@ -435,9 +434,7 @@ export function setupClearStyles($toolbar: HTMLElement, univerAPI: FUniver) {
     if (!activeSheet)
       throw new Error('activeSheet is not defined')
 
-    // eslint-disable-next-line ts/ban-ts-comment
-    // @ts-expect-error
-    const subUnitId = activeSheet._worksheet.getSheetId()
+    const subUnitId = activeSheet.getSheetId()
 
     await univerAPI.executeCommand('sheet.operation.set-selections', {
       selections: [{
