@@ -12,6 +12,7 @@ import { UniverUIPlugin } from '@univerjs/ui'
 import { UniverSheetsZenEditorPlugin } from '@univerjs/sheets-zen-editor'
 import { FUniver } from '@univerjs/facade'
 import { enUS } from 'univer:locales'
+import { setupComment } from './setups/setupComment'
 
 export function setupUniver() {
   const univer = new Univer({
@@ -42,6 +43,9 @@ export function setupUniver() {
   univer.registerPlugin(UniverSheetsZenEditorPlugin)
 
   univer.createUnit(UniverInstanceType.UNIVER_SHEET, {})
+
+  // In version v0.1.15, please register the comment plugin after calling univer.createUnit.
+  setupComment(univer)
 
   return FUniver.newAPI(univer)
 }

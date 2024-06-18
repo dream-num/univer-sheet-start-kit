@@ -23,8 +23,10 @@
     "@univerjs/sheets": "^0.1.15",
     "@univerjs/sheets-formula": "^0.1.15",
     "@univerjs/sheets-numfmt": "^0.1.15",
+    "@univerjs/sheets-thread-comment": "^0.1.15",
     "@univerjs/sheets-ui": "^0.1.15",
     "@univerjs/sheets-zen-editor": "^0.1.15",
+    "@univerjs/thread-comment-ui": "^0.1.15",
     "@univerjs/ui": "^0.1.15"
   },
   "devDependencies": {

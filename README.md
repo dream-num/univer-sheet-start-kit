@@ -2,6 +2,8 @@
 
 This template can help you get started with using the Univer API, and you can use the code inside to create useful applications.
 
+## Use Cases
+
 - [x] set range value
 - [x] get range value
 - [x] set range values
@@ -18,3 +20,7 @@ This template can help you get started with using the Univer API, and you can us
 - [x] undo / redo
 - [x] select A1
 - [x] clear A1 styles
+
+## Plugins enabled
+
+- [x] [Thread Comment](https://univer.ai/guides/sheet/features/thread-comment)

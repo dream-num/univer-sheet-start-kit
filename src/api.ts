@@ -22,7 +22,7 @@ export function setupSetValue($toolbar: HTMLElement, univerAPI: FUniver) {
       throw new Error('range is not defined')
 
     /**
-     * @see https://univer.ai/api/facade/classes/FRange.html#setValue
+     * @see https://univer.ai/typedoc/@univerjs/facade/classes/FRange#setValue
      */
     range.setValue(value)
   })
@@ -51,7 +51,7 @@ export function setupSetValues($toolbar: HTMLElement, univerAPI: FUniver) {
       throw new Error('range is not defined')
 
     /**
-     * @see https://univer.ai/api/facade/classes/FRange.html#setValues
+     * @see https://univer.ai/typedoc/@univerjs/facade/classes/FRange#setValues
      */
     range.setValues(values)
   })
@@ -81,12 +81,39 @@ export function setupGetValue($toolbar: HTMLElement, univerAPI: FUniver) {
       throw new Error('range is not defined')
 
     /**
-     * @see https://univer.ai/api/facade/classes/FRange.html#getValue
+     * @see https://univer.ai/typedoc/@univerjs/facade/classes/FRange#getValue
      */
     // eslint-disable-next-line no-alert
     alert(JSON.stringify(range.getValue(), null, 2))
     // eslint-disable-next-line no-console
     console.log(JSON.stringify(range.getValue(), null, 2))
+  })
+}
+
+export function setupGetA1CellData($toolbar: HTMLElement, univerAPI: FUniver) {
+  const $button = document.createElement('a')
+  $button.textContent = 'get A1 CellData'
+  $toolbar.appendChild($button)
+
+  $button.addEventListener('click', () => {
+    const activeWorkbook = univerAPI.getActiveWorkbook()
+    if (!activeWorkbook)
+      throw new Error('activeWorkbook is not defined')
+    const activeSheet = activeWorkbook.getActiveSheet()
+    if (!activeSheet)
+      throw new Error('activeSheet is not defined')
+
+    const range = activeSheet.getRange(0, 0, 1, 1)
+    if (!range)
+      throw new Error('range is not defined')
+
+    /**
+     * @see https://univer.ai/typedoc/@univerjs/facade/classes/FRange#getValue
+     */
+    // eslint-disable-next-line no-alert
+    alert(JSON.stringify(range.getCellData(), null, 2))
+    // eslint-disable-next-line no-console
+    console.log(JSON.stringify(range.getCellData(), null, 2))
   })
 }
 
