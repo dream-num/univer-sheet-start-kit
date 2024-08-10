@@ -12,6 +12,8 @@ import { UniverUIPlugin } from '@univerjs/ui'
 import { UniverSheetsZenEditorPlugin } from '@univerjs/sheets-zen-editor'
 import { FUniver } from '@univerjs/facade'
 import { enUS } from 'univer:locales'
+import { UniverSheetsPivotTablePlugin } from '@univerjs-pro/sheets-pivot'
+import { UniverSheetsPivotTableUIPlugin } from '@univerjs-pro/sheets-pivot-ui'
 import { setupComment } from './setups/setupComment'
 
 export function setupUniver() {
@@ -43,6 +45,12 @@ export function setupUniver() {
   univer.registerPlugin(UniverSheetsZenEditorPlugin)
 
   univer.createUnit(UniverInstanceType.UNIVER_SHEET, {})
+
+  univer.registerPlugin(UniverSheetsPivotTablePlugin, {
+    notExecuteFormula: true,
+    isServer: true,
+  })
+  univer.registerPlugin(UniverSheetsPivotTableUIPlugin)
 
   // In version v0.1.15, please register the comment plugin after calling univer.createUnit.
   setupComment(univer)
