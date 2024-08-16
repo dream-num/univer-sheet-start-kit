@@ -48,7 +48,7 @@ export function setupUniver() {
 
   univer.registerPlugin(UniverSheetsPivotTablePlugin, {
     notExecuteFormula: true,
-    isServer: true,
+    registerInOneThread: true,
   })
   univer.registerPlugin(UniverSheetsPivotTableUIPlugin)
 
