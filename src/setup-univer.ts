@@ -11,9 +11,12 @@ import { UniverSheetsUIPlugin } from '@univerjs/sheets-ui'
 import { UniverUIPlugin } from '@univerjs/ui'
 import { UniverSheetsZenEditorPlugin } from '@univerjs/sheets-zen-editor'
 import { FUniver } from '@univerjs/facade'
-import { enUS } from 'univer:locales'
 import { UniverSheetsPivotTablePlugin } from '@univerjs-pro/sheets-pivot'
 import { UniverSheetsPivotTableUIPlugin } from '@univerjs-pro/sheets-pivot-ui'
+import { UniverSheetsCrosshairHighlightPlugin } from '@univerjs/sheets-crosshair-highlight'
+
+// read more detail: https://univer.ai/guides/sheet/getting-started/univer-plugins
+import { enUS } from 'univer:locales'
 import { setupComment } from './setups/setupComment'
 
 export function setupUniver() {
@@ -46,12 +49,9 @@ export function setupUniver() {
 
   univer.createUnit(UniverInstanceType.UNIVER_SHEET, {})
 
-  univer.registerPlugin(UniverSheetsPivotTablePlugin, {
-    notExecuteFormula: true,
-    registerInOneThread: true,
-  })
+  univer.registerPlugin(UniverSheetsPivotTablePlugin)
   univer.registerPlugin(UniverSheetsPivotTableUIPlugin)
-
+  univer.registerPlugin(UniverSheetsCrosshairHighlightPlugin)
   // In version v0.1.15, please register the comment plugin after calling univer.createUnit.
   setupComment(univer)
 
