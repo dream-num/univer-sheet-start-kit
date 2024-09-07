@@ -394,7 +394,7 @@ export function setupUndo($toolbar: HTMLElement, univerAPI: FUniver) {
     if (!univerAPI)
       throw new Error('univerAPI is not defined')
 
-    univerAPI.executeCommand('univer.command.undo')
+    univerAPI.undo()
   })
 }
 
@@ -407,7 +407,7 @@ export function setupRedo($toolbar: HTMLElement, univerAPI: FUniver) {
     if (!univerAPI)
       throw new Error('univerAPI is not defined')
 
-    univerAPI.executeCommand('univer.command.redo')
+    univerAPI.redo()
   })
 }
 
@@ -426,22 +426,7 @@ export function setupSetSelection($toolbar: HTMLElement, univerAPI: FUniver) {
     if (!activeSheet)
       throw new Error('activeSheet is not defined')
 
-    const subUnitId = activeSheet.getSheetId()
-
-    univerAPI.executeCommand('sheet.operation.set-selections', {
-      selections: [{
-        range: {
-          startRow: 0,
-          startColumn: 0,
-          endRow: 0,
-          endColumn: 0,
-          rangeType: 0,
-        },
-      }],
-      subUnitId,
-      unitId: activeWorkbook.getId(),
-      type: 2,
-    })
+    activeSheet.setActiveRange(activeSheet.getRange(0, 0))
   })
 }
 
@@ -461,22 +446,7 @@ export function setupClearStyles($toolbar: HTMLElement, univerAPI: FUniver) {
     if (!activeSheet)
       throw new Error('activeSheet is not defined')
 
-    const subUnitId = activeSheet.getSheetId()
-
-    await univerAPI.executeCommand('sheet.operation.set-selections', {
-      selections: [{
-        range: {
-          startRow: 0,
-          startColumn: 0,
-          endRow: 0,
-          endColumn: 0,
-          rangeType: 0,
-        },
-      }],
-      subUnitId,
-      unitId: activeWorkbook.getId(),
-      type: 2,
-    })
+    await activeSheet.setActiveRange(activeSheet.getRange(0, 0))
 
     univerAPI.executeCommand('sheet.command.clear-selection-format')
   })
