@@ -165,9 +165,9 @@ export function setupGetWorkbookData($toolbar: HTMLElement, univerAPI: FUniver) 
       throw new Error('activeWorkbook is not defined')
 
     // eslint-disable-next-line no-alert
-    alert(JSON.stringify(activeWorkbook.getSnapshot(), null, 2))
+    alert(JSON.stringify(activeWorkbook.save(), null, 2))
     // eslint-disable-next-line no-console
-    console.log(JSON.stringify(activeWorkbook.getSnapshot(), null, 2))
+    console.log(JSON.stringify(activeWorkbook.save(), null, 2))
   })
 }
 
@@ -181,7 +181,7 @@ export function setupGetSheetData($toolbar: HTMLElement, univerAPI: FUniver) {
     if (!activeWorkbook)
       throw new Error('activeWorkbook is not defined')
 
-    const snapshot = activeWorkbook.getSnapshot()
+    const snapshot = activeWorkbook.save()
     const sheet1 = Object.values(snapshot.sheets).find((sheet) => {
       return sheet.name === 'Sheet1'
     })
@@ -233,6 +233,8 @@ export function setupScrollToCell($toolbar: HTMLElement, univerAPI: FUniver) {
       range: {
         startColumn: 1,
         startRow: 99,
+        endColumn: 1,
+        endRow: 99,
       },
     })
   })
@@ -251,10 +253,12 @@ export function setupScrollToTop($toolbar: HTMLElement, univerAPI: FUniver) {
     if (!activeWorkbook)
       throw new Error('activeWorkbook is not defined')
 
-    univerAPI.executeCommand('sheet.command.scroll-to-cell', {
+    univerAPI.executeCommand(ScrollToCellCommand.id, {
       range: {
         startColumn: 0,
         startRow: 0,
+        endColumn: 0,
+        endRow: 0,
       },
     })
   })
@@ -279,10 +283,12 @@ export function setupScrollToBottom($toolbar: HTMLElement, univerAPI: FUniver) {
     // eslint-disable-next-line ts/ban-ts-comment
     // @ts-expect-error
     const { rowCount } = activeSheet._worksheet.getSnapshot()
-    univerAPI.executeCommand('sheet.command.scroll-to-cell', {
+    univerAPI.executeCommand(ScrollToCellCommand.id, {
       range: {
         startColumn: 0,
         startRow: rowCount - 1,
+        endColumn: 0,
+        endRow: rowCount - 1,
       },
     })
   })

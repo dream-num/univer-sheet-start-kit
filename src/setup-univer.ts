@@ -14,6 +14,8 @@ import { FUniver } from '@univerjs/facade'
 import { UniverSheetsPivotTablePlugin } from '@univerjs-pro/sheets-pivot'
 import { UniverSheetsPivotTableUIPlugin } from '@univerjs-pro/sheets-pivot-ui'
 import { UniverSheetsCrosshairHighlightPlugin } from '@univerjs/sheets-crosshair-highlight'
+import { UniverFindReplacePlugin } from '@univerjs/find-replace'
+import { UniverSheetsFindReplacePlugin } from '@univerjs/sheets-find-replace'
 
 // read more detail: https://univer.ai/guides/sheet/getting-started/univer-plugins
 import { enUS } from 'univer:locales'
@@ -40,6 +42,10 @@ export function setupUniver() {
   })
   univer.registerPlugin(UniverSheetsPlugin)
   univer.registerPlugin(UniverSheetsUIPlugin)
+
+  // find-replace
+  univer.registerPlugin(UniverFindReplacePlugin)
+  univer.registerPlugin(UniverSheetsFindReplacePlugin)
 
   univer.registerPlugin(UniverSheetsNumfmtPlugin)
   univer.registerPlugin(UniverFormulaEnginePlugin)
