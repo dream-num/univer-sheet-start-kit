@@ -6,7 +6,7 @@
   "description": "A starter kit for Univer Sheet",
   "scripts": {
     "prepare": "simple-git-hooks",
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "tsc && vite build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
