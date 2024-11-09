@@ -1,6 +1,6 @@
 import type { Univer } from '@univerjs/core'
 import { UniverThreadCommentPlugin } from '@univerjs/thread-comment'
-import { UniverSheetsThreadCommentBasePlugin } from '@univerjs/sheets-thread-comment-base'
+import { UniverSheetsThreadCommentUIPlugin } from '@univerjs/sheets-thread-comment-ui'
 import { UniverSheetsThreadCommentPlugin } from '@univerjs/sheets-thread-comment'
 import { IThreadCommentMentionDataService, UniverThreadCommentUIPlugin } from '@univerjs/thread-comment-ui'
 
@@ -29,7 +29,7 @@ export function setupComment(univer: Univer) {
   }
 
   univer.registerPlugin(UniverThreadCommentPlugin)
-  univer.registerPlugin(UniverSheetsThreadCommentBasePlugin)
+  univer.registerPlugin(UniverSheetsThreadCommentUIPlugin)
   univer.registerPlugin(UniverThreadCommentUIPlugin, {
     overrides: [[IThreadCommentMentionDataService, { useClass: CustomMentionDataService }]],
   })

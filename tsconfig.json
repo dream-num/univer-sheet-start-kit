@@ -6,10 +6,10 @@
 
     /** univer plugin */
     "experimentalDecorators": true,
-    "module": "ESNext",
+    "module": "Node16",
 
     /* Bundler mode */
-    "moduleResolution": "bundler",
+    "moduleResolution": "Node16",
     "resolveJsonModule": true,
     "allowImportingTsExtensions": true,
 
