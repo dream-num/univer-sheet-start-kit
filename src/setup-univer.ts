@@ -1,7 +1,7 @@
 import '@univerjs/presets/lib/styles/preset-sheets-core.css'
 import '@univerjs/presets/lib/styles/preset-sheets-advanced.css'
 import '@univerjs/presets/lib/styles/preset-sheets-filter.css'
-import '@univerjs/presets/lib/styles/preset-sheets-collaboration.css'
+// import '@univerjs/presets/lib/styles/preset-sheets-collaboration.css'
 import '@univerjs/presets/lib/styles/preset-sheets-thread-comment.css'
 import '@univerjs/presets/lib/styles/preset-sheets-conditional-formatting.css'
 import '@univerjs/presets/lib/styles/preset-sheets-data-validation.css'
@@ -83,6 +83,9 @@ export function setupUniver() {
         header: true,
         footer: true,
       }),
+      UniverSheetsDrawingPreset({
+        collaboration,
+      }),
       UniverSheetsAdvancedPreset({
         useWorker: false,
         // if univer page is not in the same domain as the server, you need to set the following parameters
@@ -101,9 +104,6 @@ export function setupUniver() {
       UniverSheetsFindReplacePreset(),
       UniverSheetsSortPreset(),
       UniverSheetsHyperLinkPreset(),
-      UniverSheetsDrawingPreset({
-        collaboration,
-      }),
     ],
     plugins: [
       UniverSheetsCrosshairHighlightPlugin,
