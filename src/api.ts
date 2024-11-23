@@ -1,5 +1,5 @@
 // eslint
-import type { FUniver } from '@univerjs/facade'
+import type { FUniver } from '@univerjs/core'
 import { ScrollToCellCommand } from '@univerjs/sheets-ui'
 
 export function setupSetValue($toolbar: HTMLElement, univerAPI: FUniver) {
@@ -431,4 +431,13 @@ export function setupClearStyles($toolbar: HTMLElement, univerAPI: FUniver) {
 
     univerAPI.executeCommand('sheet.command.clear-selection-format')
   })
+}
+
+export function setupVersion($toolbar: HTMLElement) {
+  const $button = document.createElement('a')
+  // eslint-disable-next-line node/prefer-global/process
+  $button.textContent = `version: ${process.env.UNIVER_VERSION}`
+  $button.href = 'https://github.com/dream-num/univer'
+  $button.target = '_blank'
+  $toolbar.appendChild($button)
 }
