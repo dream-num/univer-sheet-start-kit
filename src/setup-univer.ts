@@ -1,7 +1,7 @@
 import '@univerjs/presets/lib/styles/preset-sheets-core.css'
 import '@univerjs/presets/lib/styles/preset-sheets-advanced.css'
 import '@univerjs/presets/lib/styles/preset-sheets-filter.css'
-// import '@univerjs/presets/lib/styles/preset-sheets-collaboration.css'
+import '@univerjs/presets/lib/styles/preset-sheets-collaboration.css'
 import '@univerjs/presets/lib/styles/preset-sheets-thread-comment.css'
 import '@univerjs/presets/lib/styles/preset-sheets-conditional-formatting.css'
 import '@univerjs/presets/lib/styles/preset-sheets-data-validation.css'
@@ -10,7 +10,7 @@ import '@univerjs/presets/lib/styles/preset-sheets-find-replace.css'
 import '@univerjs/presets/lib/styles/preset-sheets-hyper-link.css'
 import '@univerjs/presets/lib/styles/preset-sheets-sort.css'
 
-import { LocaleType, LogLevel, Tools, createUniver, defaultTheme } from '@univerjs/presets'
+import { createUniver, defaultTheme, LocaleType, LogLevel, Tools, UniverInstanceType } from '@univerjs/presets'
 
 import { UniverSheetsCorePreset } from '@univerjs/presets/preset-sheets-core'
 import sheetsCoreEnUs from '@univerjs/presets/preset-sheets-core/locales/en-US'
@@ -48,7 +48,7 @@ import sheetsSortEnUs from '@univerjs/presets/preset-sheets-sort/locales/en-US'
 import { UniverSheetsZenEditorPlugin } from '@univerjs/sheets-zen-editor'
 import sheetsZenEditorEnUs from '@univerjs/sheets-zen-editor/locale/en-US'
 import { UniverSheetsCrosshairHighlightPlugin } from '@univerjs/sheets-crosshair-highlight'
-import { UniverInstanceType } from '@univerjs/core'
+import UniverSheetsCrosshairHighlightEnUS from '@univerjs/sheets-crosshair-highlight/locale/en-US'
 
 export function setupUniver() {
   const universerEndpoint = window.location.host
@@ -72,6 +72,7 @@ export function setupUniver() {
         sheetsHyperLinkEnUs,
         sheetsSortEnUs,
         sheetsZenEditorEnUs,
+        UniverSheetsCrosshairHighlightEnUS,
       ),
     },
     collaboration,

@@ -11,7 +11,7 @@ export default ({ mode }) => {
     ],
     define: {
       'process.env.UNIVER_CLIENT_LICENSE': `"${env.UNIVER_CLIENT_LICENSE}"` || '"%%UNIVER_CLIENT_LICENSE_PLACEHOLDER%%"',
-      'process.env.UNIVER_VERSION': `"${packageJson.dependencies['@univerjs/core']}"`,
+      'process.env.UNIVER_VERSION': `"${packageJson.dependencies['@univerjs/presets']}"`,
     },
   })
 }
