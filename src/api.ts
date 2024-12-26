@@ -440,3 +440,12 @@ export function setupVersion($toolbar: HTMLElement) {
   $button.target = '_blank'
   $toolbar.appendChild($button)
 }
+
+export function setupUniverGo($toolbar: HTMLElement) {
+  const $button = document.createElement('a')
+  $button.textContent = 'Univer Go'
+  $button.title = 'Build Your Own Spreadsheet — Seamlessly Integrate with AI Agents, Databases, and Applications'
+  $button.href = 'https://go.univer.ai?from=univer-sheet-start-kit'
+  $button.target = '_blank'
+  $toolbar.appendChild($button)
+}
