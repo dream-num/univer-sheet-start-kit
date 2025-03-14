@@ -12,9 +12,9 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@univerjs/presets": "0.6.5",
-    "@univerjs/sheets-crosshair-highlight": "0.6.5",
-    "@univerjs/sheets-zen-editor": "0.6.5"
+    "@univerjs/presets": "0.6.6",
+    "@univerjs/sheets-crosshair-highlight": "0.6.6",
+    "@univerjs/sheets-zen-editor": "0.6.6"
   },
   "devDependencies": {
     "@antfu/eslint-config": "2.22.0-beta.3",
