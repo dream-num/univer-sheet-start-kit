@@ -12,19 +12,19 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@univerjs/presets": "0.6.6",
-    "@univerjs/sheets-crosshair-highlight": "0.6.6",
-    "@univerjs/sheets-zen-editor": "0.6.6"
+    "@univerjs/presets": "0.7.0",
+    "@univerjs/sheets-crosshair-highlight": "0.7.0",
+    "@univerjs/sheets-zen-editor": "0.7.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "2.22.0-beta.3",
+    "@antfu/eslint-config": "4.13.1",
     "@univerjs/vite-plugin": "^0.5.1",
-    "eslint": "^9.6.0",
-    "eslint-plugin-format": "^0.1.2",
-    "lint-staged": "^15.2.7",
-    "simple-git-hooks": "^2.11.1",
-    "typescript": "^5.5.3",
-    "vite": "^5.3.3"
+    "eslint": "^9.26.0",
+    "eslint-plugin-format": "^1.0.1",
+    "lint-staged": "^16.0.0",
+    "simple-git-hooks": "^2.13.0",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"

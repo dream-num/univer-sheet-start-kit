@@ -18,7 +18,6 @@ import {
   setupSetValue,
   setupSetValues,
   setupUndo,
-  setupUniverGo,
   setupVersion,
 } from './api'
 
@@ -50,5 +49,4 @@ export function setupToolbar(univerAPI: FUniver) {
   setupClearStyles($toolbar, univerAPI)
 
   setupVersion($toolbar)
-  setupUniverGo($toolbar)
 }
