@@ -1,7 +1,7 @@
 {
   "name": "univer-sheet-start-kit",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.8.1",
   "private": true,
   "description": "A starter kit for Univer Sheet",
   "scripts": {
@@ -12,16 +12,16 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@univerjs/presets": "0.7.0",
-    "@univerjs/sheets-crosshair-highlight": "0.7.0",
-    "@univerjs/sheets-zen-editor": "0.7.0"
+    "@univerjs/presets": "0.8.1",
+    "@univerjs/sheets-crosshair-highlight": "0.8.1",
+    "@univerjs/sheets-zen-editor": "0.8.1"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "4.13.1",
+    "@antfu/eslint-config": "4.14.1",
     "@univerjs/vite-plugin": "^0.5.1",
-    "eslint": "^9.26.0",
+    "eslint": "^9.28.0",
     "eslint-plugin-format": "^1.0.1",
-    "lint-staged": "^16.0.0",
+    "lint-staged": "^16.1.0",
     "simple-git-hooks": "^2.13.0",
     "typescript": "^5.8.3",
     "vite": "^6.3.5"
